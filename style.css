@@ -1,0 +1,134 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+  
+  --text-color: #323238;
+  --card-color: #E1E1E6;
+  --card-color-active: #02799D;
+  --background-color: #FFFFFF;
+}
+
+.sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
+body {
+  height: 100vh;
+  
+  display: grid;
+  place-content: center;
+  
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  gap: 19rem;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#timer {
+  display: flex;
+}
+
+#controls:not(.isRunning) .ph-pause-circle,
+.isRunning .ph-play-circle {
+  display: none;
+}
+
+#timer span {
+  font-size: 12.5rem;
+  user-select: none;
+  cursor: text;
+}
+
+#minutes,
+#seconds {
+  transition: transform 0.1s;
+}
+
+#minutes:hover,
+#seconds:hover {
+  transform: scale(105%);
+}
+
+#controls {
+  display: flex;
+  gap: 4rem;
+}
+
+#controls button {
+  background: transparent;
+  border: none;
+  font-size: 4.8rem;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+#controls button:hover {
+  color: var(--card-color-active);
+  transform: scale(110%);
+}
+
+.right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3.2rem;
+}
+
+.card {
+  width: 14rem;
+  height: 16rem;
+  background: var(--card-color);
+  border: none;
+  cursor: pointer;
+  border-radius: 2.4rem;
+}
+
+.card svg {
+  pointer-events: none;
+  transition: transform 0.1s;
+}
+
+.card:hover,
+.card.isPlaying {
+  background: var(--card-color-active);
+}
+
+.card:hover svg {
+  transform: scale(110%);
+}
+
+.card:hover path,
+.card.isPlaying path {
+  fill: white;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    gap: 5rem;
+  }
+}
