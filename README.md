@@ -33,7 +33,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O Photoblog é um projeto simples para prática de técnicas apresentadas durante as aulas do Explorer.
+O Focus Timer é um projeto simples para prática de técnicas apresentadas durante as aulas do Explorer.
 
 - [Acesse o projeto finalizado, online](https://patrickxfranco.github.io/focus-timer/)
 
